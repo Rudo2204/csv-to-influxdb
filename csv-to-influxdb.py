@@ -117,6 +117,10 @@ def loadCsv(
                 if f in row:
                     if f == "power":
                         v = float(row[f]) if row[f] else None
+                    elif (
+                        f == "activePoolURL" or f == "activePoolUser" or f == "firmware"
+                    ):
+                        v = str(row[f]) if row[f] else ""
                     elif f == "powerSupplyError":
                         v = 1 if row[f] else 0
                     elif isfloat(row[f]):
